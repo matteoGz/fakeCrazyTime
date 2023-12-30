@@ -3,10 +3,13 @@ import SpinMarker from '../assets/spin-marker.svg';
 import { mainWheelModel } from '../models/mainWheelModel';
 import { Button, RefreshIcon } from 'evergreen-ui';
 import logoWheel from '../assets/LogoMainWheel.png';
+import { useNavigate } from 'react-router';
 
 export default function MainWheel(props) {
   console.log("props to MainWheel--- ", props)
   
+  const navigate = useNavigate();
+
   const [colorButtons, setColorButtons] = useState([true, true, true, true]);
 
   const segments = mainWheelModel;
@@ -53,9 +56,8 @@ export default function MainWheel(props) {
           const rotation = midAngle * (180 / Math.PI);
 
           return (
-            <>
+            <React.Fragment key={index}>
               <path
-                key={index}
                 d={`M 50 50 L ${x1} ${y1} A 50 50 0 0 1 ${x2} ${y2} Z`}
                 fill={seg.color}
               />
@@ -69,7 +71,7 @@ export default function MainWheel(props) {
                 height="50"
                 href={logoWheel}
               />
-            </>
+            </React.Fragment>
           );
         })}
       </svg>
@@ -94,6 +96,7 @@ export default function MainWheel(props) {
         colors[0] = !colorButtons[0]
         setColorButtons(colors)
       }}
+      onClick={() => navigate('/coinFlip')}
     >
       COIN FLIP
     </Button>
@@ -110,6 +113,7 @@ export default function MainWheel(props) {
         colors[1] = !colorButtons[1]
         setColorButtons(colors)
       }}
+      onClick={() => navigate('/cashHunt')}
     >
       CASH HUNT
     </Button>
@@ -126,6 +130,7 @@ export default function MainWheel(props) {
         colors[2] = !colorButtons[2]
         setColorButtons(colors)
       }}
+      onClick={() => navigate('/pachinko')}
     >
       PACHINKO
     </Button>
@@ -142,6 +147,7 @@ export default function MainWheel(props) {
         colors[3] = !colorButtons[3]
         setColorButtons(colors)
       }}
+      onClick={() => navigate('/crazyTime')}
     >
       CRAZY TIME
     </Button>

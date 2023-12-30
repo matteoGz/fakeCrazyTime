@@ -1,0 +1,14 @@
+.spinning-coin {
+    animation: spin 10s linear infinite;
+    width: 100px;
+    height: 100px;
+}
+  
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(20000deg);
+    }
+}
