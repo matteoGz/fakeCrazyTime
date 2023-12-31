@@ -54,6 +54,7 @@ export default function CoinFlip(){
         >
             Torna alla ruota principale
         </button>
+        <h3>Chi indovina prende il bonus indicato altrimenti metà (arrotondando per difetto)</h3>
       </div>
     );
 }

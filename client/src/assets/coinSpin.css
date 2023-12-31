@@ -6,9 +6,9 @@
   
 @keyframes spin {
     from {
-        transform: rotate(0deg);
+        transform: rotateX(0deg);
     }
     to {
-        transform: rotate(20000deg);
+        transform: rotateX(20000deg);
     }
 }

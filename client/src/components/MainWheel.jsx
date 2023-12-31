@@ -113,7 +113,7 @@ export default function MainWheel(props) {
         colors[1] = !colorButtons[1]
         setColorButtons(colors)
       }}
-      onClick={() => navigate('/cashHunt')}
+      onClick={() => navigate('/cashHunt', { state: { reload: true }})}
     >
       CASH HUNT
     </Button>
