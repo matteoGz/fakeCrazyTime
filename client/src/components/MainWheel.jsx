@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router';
 
 export default function MainWheel(props) {
   console.log("props to MainWheel--- ", props)
-  
+  const currentWidth = window.innerWidth;
+  console.log("width vw: ", currentWidth)  
   const navigate = useNavigate();
 
   const [colorButtons, setColorButtons] = useState([true, true, true, true]);
@@ -35,7 +36,7 @@ export default function MainWheel(props) {
         <img src={SpinMarker} alt='Spin Marker' style={{width: 64, height: 64}}/>
     </div>
     <div className='main-wheel-container' style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: 5}}>
-      <svg className='spin-svg' width="100vw" height="88vh" viewBox="0 0 100 100">
+      <svg className='spin-svg' width="100vw" height={currentWidth > 768 ? "88vh" : "40vh"} viewBox="0 0 100 100">
         {segments.map((seg, index) => {
           const angle = (360 / 54) * index; //angle° for each segment
 

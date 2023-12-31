@@ -7,6 +7,14 @@
     border: 1px solid black;
 }
 
+.mobile-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 375px;
+    border: 1px solid black;
+}
+
 .board-row {
     display: flex;
     justify-content: center;

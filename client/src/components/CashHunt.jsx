@@ -8,6 +8,8 @@ export default function CashHunt(){
 
     let reload = location.state.reload
 
+    const currentWidth = window.innerWidth;
+
     useCallback(
       () => {
         window.location.reload()
@@ -26,7 +28,7 @@ export default function CashHunt(){
 
     return(
     <div>
-        <div className="board">
+        <div className={currentWidth > 768 ? "board" : "mobile-board"}>
             <h1>Cash Hunt</h1>
             <button
                 style={{marginLeft: 25}}
