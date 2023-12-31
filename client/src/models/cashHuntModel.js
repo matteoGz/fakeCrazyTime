@@ -1,4 +1,4 @@
-let randomBonus = Math.floor(Math.random() * 41) + 10;
+let randomBonus = Math.floor(Math.random() * 31) + 10;
 
 const row1 = [
     Math.floor(Math.random() * 31) + 10,

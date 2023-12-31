@@ -10,6 +10,8 @@ export default function CrazyTime(){
     const [door2, setDoor2] = useState(false);
     const [door3, setDoor3] = useState(false);
 
+    const crazyBonus = Math.random() < 0.33;
+
     const [randomDoor1, setRandomDoor1] = useState(0);
     const [randomDoor2, setRandomDoor2] = useState(0);
     const [randomDoor3, setRandomDoor3] = useState(0); 
@@ -18,6 +20,7 @@ export default function CrazyTime(){
         <div>
             <h1>Crazy Time</h1>
             <h2>Choose one of the three doors</h2>
+            { crazyBonus ? <><h3>CRAZY BONUS ATTIVO</h3><h4>Moltiplica la vincita per 2x !</h4></> : <></> }
             <div className="doors-container">
                 <div className="door">
                 { !door1 ?
@@ -27,10 +30,10 @@ export default function CrazyTime(){
                         height={360}
                         onClick= {() => {
                             setDoor1(true)
-                            setRandomDoor1(Math.floor(Math.random() * 150) + 25)
+                            setRandomDoor1(Math.floor(Math.random() * 76) + 25)
                         }}
                     />
-                 : <h1 style={{marginLeft: 100}}>{randomDoor1 > 100 ? "50" : randomDoor1}</h1>
+                 : <h1 style={{marginLeft: 100}}>{randomDoor1}</h1>
                 }
                 </div>
                 <div className="door">
@@ -41,10 +44,10 @@ export default function CrazyTime(){
                         height={360}
                         onClick= {() => {
                             setDoor2(true)
-                            setRandomDoor2(Math.floor(Math.random() * 150) + 25)
+                            setRandomDoor2(Math.floor(Math.random() * 76) + 25)
                         }}
                     />
-                 : <h1 style={{marginLeft: 100}}>{randomDoor2 > 100 ? "50" : randomDoor2}</h1>
+                 : <h1 style={{marginLeft: 100}}>{randomDoor2}</h1>
                 }
                 </div>
                 <div className="door">
@@ -55,10 +58,10 @@ export default function CrazyTime(){
                         height={360}
                         onClick= {() => {
                             setDoor3(true)
-                            setRandomDoor3(Math.floor(Math.random() * 150) + 25)
+                            setRandomDoor3(Math.floor(Math.random() * 76) + 25)
                         }}
                     />
-                 : <h1 style={{marginLeft: 100}}>{randomDoor3 > 100 ? "50" : randomDoor3}</h1>
+                 : <h1 style={{marginLeft: 100}}>{randomDoor3}</h1>
                 }
                 </div>
             </div>
